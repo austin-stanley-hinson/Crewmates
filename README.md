@@ -4,7 +4,7 @@ Submitted by: **Austin Stanley Hinson**
 
 This web app: **A spaceship crew builder where you design your own crewmates and keep them saved in a Supabase database. Users name each crewmate, give them a role (Engineer, Scientist, Pilot, or Captain), and then pick a speed and color by clicking an option, with each role only allowing some speeds and colors. A drawing of the crewmate changes color as you pick. Every crewmate appears in a gallery with the newest at the top, under a crew stats panel and a mission success score that changes the look of the whole list. Each crewmate has its own page with its role, crewmate number, the date it joined the crew, and a line about how fast it is. Crewmates can be edited at any time, with the changes shown right away, or deleted from their edit page.**
 
-Time spent: **X** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
@@ -58,7 +58,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+[▶️ Watch the video walkthrough on Imgur](https://imgur.com/a/iIKXWPV)
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with the macOS Screenshot tool (Cmd+Shift+5) and converted to a GIF  
