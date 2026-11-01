@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../client';
 import CrewmateIcon from '../components/CrewmateIcon';
+import CrewStats from '../components/CrewStats';
 
 // The summary page: every crewmate, newest first
 function CrewmateGallery() {
@@ -46,22 +47,25 @@ function CrewmateGallery() {
           <Link to="/create" className="primary-button">Create one here</Link>
         </div>
       ) : (
-        <div className="gallery">
-          {crewmates.map((crewmate) => (
-            <div className="crewmate-card" key={crewmate.id}>
-              <Link to={`/crewmate/${crewmate.id}`} className="card-link">
-                <CrewmateIcon color={crewmate.color} size={70} />
-                <h2>{crewmate.name}</h2>
-                <p className="card-role">{crewmate.category ?? "No role"}</p>
-                <p>Speed: {crewmate.speed} mph</p>
-                <p>Color: {crewmate.color}</p>
-              </Link>
-              <Link to={`/edit/${crewmate.id}`} className="secondary-button">
-                Edit Crewmate
-              </Link>
-            </div>
-          ))}
-        </div>
+        <>
+          <CrewStats crewmates={crewmates} />
+          <div className="gallery">
+            {crewmates.map((crewmate) => (
+              <div className="crewmate-card" key={crewmate.id}>
+                <Link to={`/crewmate/${crewmate.id}`} className="card-link">
+                  <CrewmateIcon color={crewmate.color} size={70} />
+                  <h2>{crewmate.name}</h2>
+                  <p className="card-role">{crewmate.category ?? "No role"}</p>
+                  <p>Speed: {crewmate.speed} mph</p>
+                  <p>Color: {crewmate.color}</p>
+                </Link>
+                <Link to={`/edit/${crewmate.id}`} className="secondary-button">
+                  Edit Crewmate
+                </Link>
+              </div>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
