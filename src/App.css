@@ -157,6 +157,86 @@ button:disabled {
   margin-top: 1.5rem;
 }
 
+/* ---------- Form ---------- */
+
+.crewmate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.form-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.form-label {
+  padding: 0;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.crewmate-form input {
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.choice {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.choice:hover {
+  background: var(--panel-hover);
+}
+
+.choice.selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #08101f;
+  font-weight: 600;
+}
+
+.success {
+  color: var(--success);
+  font-weight: 600;
+  text-align: center;
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 600;
+  text-align: center;
+}
+
 /* ---------- Small screens: sidebar becomes a top bar ---------- */
 
 @media (max-width: 700px) {
