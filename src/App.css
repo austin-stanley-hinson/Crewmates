@@ -365,6 +365,91 @@ button:disabled {
   text-align: right;
 }
 
+/* ---------- Mission success ---------- */
+
+/* Each tier sets one color that the banner and the cards use */
+.tier-ready {
+  --tier: var(--success);
+}
+
+.tier-shaky {
+  --tier: #f5b83c;
+}
+
+.tier-doomed {
+  --tier: var(--danger);
+}
+
+.mission-status {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--panel);
+  border: 2px solid var(--tier);
+  border-radius: 12px;
+}
+
+.mission-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.mission-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.mission-label {
+  color: var(--tier);
+  font-weight: 700;
+}
+
+.mission-meter {
+  height: 0.9rem;
+  margin: 1rem 0 0.75rem;
+  border-radius: 999px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.mission-meter span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--tier);
+  transition: width 0.4s ease;
+}
+
+.mission-breakdown,
+.mission-tip {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* The crewmate list takes on the tier's look */
+.gallery.tier-ready .crewmate-card {
+  border-color: var(--tier);
+  box-shadow: 0 0 18px -4px var(--tier);
+}
+
+.gallery.tier-shaky .crewmate-card {
+  border-color: var(--tier);
+  border-style: dashed;
+}
+
+.gallery.tier-doomed .crewmate-card {
+  border-color: var(--tier);
+  background: color-mix(in srgb, var(--danger) 10%, var(--panel));
+  filter: saturate(0.6);
+}
+
+.gallery.tier-doomed .crewmate-card:hover {
+  filter: none;
+}
+
 /* ---------- Detail ---------- */
 
 .detail {

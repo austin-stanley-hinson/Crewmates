@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { supabase } from '../client';
 import CrewmateIcon from '../components/CrewmateIcon';
 import CrewStats from '../components/CrewStats';
+import MissionStatus from '../components/MissionStatus';
+import { crewSuccess } from '../crewSuccess';
 
 // The summary page: every crewmate, newest first
 function CrewmateGallery() {
@@ -37,6 +39,9 @@ function CrewmateGallery() {
   if (isLoading) return <div className="page"><p>Loading your crew...</p></div>;
   if (error) return <div className="page"><p className="error">{error}</p></div>;
 
+  // How likely the crew is to succeed (only when there is a crew)
+  const success = crewmates.length > 0 ? crewSuccess(crewmates) : null;
+
   return (
     <div className="page">
       <h1>Your Crewmate Gallery</h1>
@@ -49,7 +54,9 @@ function CrewmateGallery() {
       ) : (
         <>
           <CrewStats crewmates={crewmates} />
-          <div className="gallery">
+          <MissionStatus success={success} />
+          {/* The tier changes the look of every card in the list */}
+          <div className={`gallery tier-${success.tier}`}>
             {crewmates.map((crewmate) => (
               <div className="crewmate-card" key={crewmate.id}>
                 <Link to={`/crewmate/${crewmate.id}`} className="card-link">
