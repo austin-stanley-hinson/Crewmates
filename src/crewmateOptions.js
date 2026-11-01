@@ -25,3 +25,10 @@ export const COLOR_VALUES = {
   Rainbow:
     "linear-gradient(160deg, #e5383b, #f4842a, #f5d23c, #3ac46e, #3a6ff0, #8b4fd8)",
 };
+
+// A short line about a crewmate's speed, shown on their detail page
+export function describeSpeed(speed) {
+  if (speed >= 5) return "Zoom! Nobody gets to an emergency meeting faster.";
+  if (speed >= 3) return "Quick enough to finish tasks and still make it to the meeting.";
+  return "Slow and steady. Maybe find a faster crewmate to finish the tasks.";
+}
