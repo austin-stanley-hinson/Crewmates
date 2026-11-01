@@ -52,6 +52,7 @@ function EditCrewmate() {
       .from("crewmates")
       .update({
         name: crewmate.name.trim(),
+        category: crewmate.category,
         speed: crewmate.speed,
         color: crewmate.color,
       })

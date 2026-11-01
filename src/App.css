@@ -225,6 +225,16 @@ button:disabled {
   font-weight: 600;
 }
 
+.form-section:disabled {
+  opacity: 0.6;
+}
+
+.form-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .success {
   color: var(--success);
   font-weight: 600;
@@ -277,6 +287,12 @@ button:disabled {
   color: var(--muted);
 }
 
+.card-link .card-role {
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .empty {
   text-align: center;
 }
@@ -319,6 +335,11 @@ button:disabled {
   margin: 0.3rem 0 0;
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+.role-note {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
 }
 
 .speed-note {

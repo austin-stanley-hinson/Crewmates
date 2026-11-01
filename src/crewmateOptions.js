@@ -13,6 +13,32 @@ export const COLORS = [
   "Rainbow",
 ];
 
+// Each role only allows some of the speeds and colors
+export const CATEGORIES = {
+  Engineer: {
+    description: "Keeps the ship running. Steady hands, not fast feet.",
+    speeds: [1, 2, 3],
+    colors: ["Orange", "Yellow", "Red"],
+  },
+  Scientist: {
+    description: "Runs tests in the lab and studies new planets.",
+    speeds: [2, 3, 4],
+    colors: ["Blue", "Green", "Purple"],
+  },
+  Pilot: {
+    description: "Flies the ship, so they have to be quick.",
+    speeds: [3, 4, 5],
+    colors: ["Red", "Blue", "Pink"],
+  },
+  Captain: {
+    description: "Leads the crew. Only the boldest colors will do.",
+    speeds: [1, 2, 3, 4, 5],
+    colors: ["Purple", "Rainbow"],
+  },
+};
+
+export const CATEGORY_NAMES = Object.keys(CATEGORIES);
+
 // The CSS color used to draw each crewmate
 export const COLOR_VALUES = {
   Red: "#e5383b",

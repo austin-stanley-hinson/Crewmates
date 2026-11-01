@@ -52,6 +52,7 @@ function CrewmateGallery() {
               <Link to={`/crewmate/${crewmate.id}`} className="card-link">
                 <CrewmateIcon color={crewmate.color} size={70} />
                 <h2>{crewmate.name}</h2>
+                <p className="card-role">{crewmate.category ?? "No role"}</p>
                 <p>Speed: {crewmate.speed} mph</p>
                 <p>Color: {crewmate.color}</p>
               </Link>

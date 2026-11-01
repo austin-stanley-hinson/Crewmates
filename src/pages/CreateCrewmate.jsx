@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
 import CrewmateForm from '../components/CrewmateForm';
 
-const EMPTY_CREWMATE = { name: "", speed: null, color: null };
+const EMPTY_CREWMATE = { name: "", category: null, speed: null, color: null };
 
 function CreateCrewmate() {
   const navigate = useNavigate();
@@ -23,6 +23,7 @@ function CreateCrewmate() {
 
     const { error } = await supabase.from("crewmates").insert({
       name: crewmate.name.trim(),
+      category: crewmate.category,
       speed: crewmate.speed,
       color: crewmate.color,
     });

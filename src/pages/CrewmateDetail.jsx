@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { supabase } from '../client';
 import CrewmateIcon from '../components/CrewmateIcon';
-import { describeSpeed } from '../crewmateOptions';
+import { describeSpeed, CATEGORIES } from '../crewmateOptions';
 
 // The info page for one crewmate, e.g. /crewmate/3
 function CrewmateDetail() {
@@ -43,7 +43,9 @@ function CrewmateDetail() {
     );
   }
 
-  const createdAt = new Date(crewmate.created_at).toLocaleString(undefined, {
+  const role = CATEGORIES[crewmate.category];
+
+  const createdAt =new Date(crewmate.created_at).toLocaleString(undefined, {
     dateStyle: "long",
     timeStyle: "short",
   });
@@ -53,7 +55,13 @@ function CrewmateDetail() {
       <CrewmateIcon color={crewmate.color} size={140} />
       <h1>{crewmate.name}</h1>
 
+      {role && <p className="role-note">{crewmate.category}: {role.description}</p>}
+
       <dl className="stats">
+        <div>
+          <dt>Role</dt>
+          <dd>{crewmate.category ?? "No role"}</dd>
+        </div>
         <div>
           <dt>Speed</dt>
           <dd>{crewmate.speed} mph</dd>
