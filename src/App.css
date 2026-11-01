@@ -1,3 +1,187 @@
+/* ---------- Layout ---------- */
+
 .app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 220px;
+  height: 100vh;
+  padding: 1.5rem 1rem;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+}
+
+.sidebar a {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: var(--panel-hover);
+  color: var(--text);
+}
+
+.sidebar a.active {
+  background: var(--panel-hover);
+  color: var(--accent);
+}
+
+.sidebar .sidebar-title,
+.sidebar .sidebar-title.active {
+  margin-bottom: 1rem;
+  background: none;
+  color: var(--text);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
   padding: 2rem;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.primary-button,
+.secondary-button,
+.danger-button {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: var(--accent);
+  color: #08101f;
+}
+
+.secondary-button {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.secondary-button:hover {
+  background: var(--panel-hover);
+}
+
+.danger-button {
+  background: var(--danger);
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Crewmate drawing ---------- */
+
+.crewmate-icon {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.crewmate-body {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 78%;
+  height: 100%;
+  border-radius: 45% 45% 18% 18%;
+  border: 3px solid #0006;
+}
+
+.crewmate-pack {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 30%;
+  height: 50%;
+  border-radius: 30%;
+  border: 3px solid #0006;
+}
+
+.crewmate-visor {
+  position: absolute;
+  top: 20%;
+  right: -6%;
+  width: 70%;
+  height: 28%;
+  border-radius: 50%;
+  border: 3px solid #0006;
+  background: linear-gradient(160deg, #d6f3ff 0%, #8fc7e0 40%, #4a7d96 100%);
+}
+
+/* ---------- Home ---------- */
+
+.home {
+  text-align: center;
+}
+
+.home-crew {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.home-links,
+.edit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Small screens: sidebar becomes a top bar ---------- */
+
+@media (max-width: 700px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 0.75rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar .sidebar-title,
+  .sidebar .sidebar-title.active {
+    margin: 0 auto 0 0;
+  }
+
+  .content {
+    padding: 1.25rem 1rem;
+  }
 }
